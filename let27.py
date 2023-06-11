@@ -38,3 +38,23 @@ def let27(f = f_a) -> print:
     print(sum(shark(arr)))
 
 let27()
+
+
+def _27(f = open('./src/lab/27-B-2.txt')):
+    # arr = [[int(el), int(el) % 3]  for el in f][1:]
+    # arr.sort(key = lambda x: x[0])
+    arr = sorted([int(el) for el in f][1:])[::-1]
+    lol = [el % 3 for el in arr]
+    print(lol)
+
+    # arr.remove(arr[0])
+    # arr.remove(arr[2])
+    # arr.remove(arr[3])
+    return arr[0] + arr[2] + arr[5]
+
+def _27_A(f = open('./src/lab/27-A-2.txt')):
+    arr = sorted([int(el) for el in f][1:])
+    lol = [el % 3 for el in arr]
+    print(lol)
+
+    return sum([arr[-2], arr[-3], arr[-5]])

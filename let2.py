@@ -24,6 +24,7 @@ def let2() -> print:
     # f = lambda x,y,z,w: not((not(x) or y or z) == (not(y) and z and w))
     # ultra = [[[x1, 1, 1, 1], [x2, 0, 0, x3], [x4, 1, x5, 1]] for x1, x2, x3, x4, x5 in product([0,1], repeat = 5)]
 
+
     for el in ultra:
         positions = [(x, y, z, w) for x, y, z, w in permutations(range(4)) if all(f(row[x], row[y], row[z], row[w]) == False for row in el)]
         if len(positions) == 1:

@@ -130,3 +130,16 @@ def gazel():
 
 from fnmatch import *
 print([[x, x // 2023] for x in range(2023, 10**10, 2023) if fnmatch(str(x), '1?2139*4')])
+
+
+
+def krab(n):
+    d = 2
+    while d * d <= n:
+        if n % d == 0: return False
+        d += 1
+    return True
+
+# for x in range(101_000_000, 102_000_001, 2):
+#     if ((x // 2) ** 0.5 == int((x // 2)** 0.5)) and krab((x // 2) ** 0.5):
+#         pass
