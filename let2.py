@@ -17,8 +17,12 @@ def let2() -> print:
     # ultra = [[[1, 1, x1, 1], [x2, 1, 1, x3], [1, x4, x5, x6]] for x1, x2, x3, x4, x5, x6 in product([0, 1], repeat = 6)]
 
     # 16878
-    f = lambda x, y, z, w: (x != y) <= (z == (y or w))
-    ultra = [[[0, x1, 0, x2], [0, 0, x3, 0], [0, x4, x5, 0]] for x1, x2, x3, x4, x5 in product([0,1], repeat = 5)]
+    # f = lambda x, y, z, w: (x != y) <= (z == (y or w))
+    # ultra = [[[0, x1, 0, x2], [0, 0, x3, 0], [0, x4, x5, 0]] for x1, x2, x3, x4, x5 in product([0,1], repeat = 5)]
+
+    # 27228
+    # f = lambda x,y,z,w: not((not(x) or y or z) == (not(y) and z and w))
+    # ultra = [[[x1, 1, 1, 1], [x2, 0, 0, x3], [x4, 1, x5, 1]] for x1, x2, x3, x4, x5 in product([0,1], repeat = 5)]
 
     for el in ultra:
         positions = [(x, y, z, w) for x, y, z, w in permutations(range(4)) if all(f(row[x], row[y], row[z], row[w]) == False for row in el)]
@@ -26,5 +30,3 @@ def let2() -> print:
             (x, y, z, w) = positions[0]
             print(f'x: {x} y: {y} z: {z} w: {w}')
 let2()
-
-
