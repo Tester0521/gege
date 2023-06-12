@@ -253,5 +253,13 @@ def csv22(f = open('./src/lab/22csv.csv')):
         else: d[key] = max([int(d[x]) for x in dep]) + int(time) + 3
     return max(d.values())
 
-print(csv22())
+# print(csv22())
+
+
+
+
+
+
+
+
 
