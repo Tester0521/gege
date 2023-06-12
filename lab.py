@@ -236,3 +236,22 @@ def krab(n):
 #     if ((x // 2) ** 0.5 == int((x // 2) ** 0.5)) and prime((x // 2) ** 0.5): print(x)
 
 
+
+
+
+
+def csv22(f = open('./src/lab/22csv.csv')):
+    arr = [el for el in f][1:]
+    d = {'0': 0}
+    for el in arr:
+        [key, time, dep] = el.split(',')
+        dep = dep.replace('\n', '')
+        dep = dep.split(';')
+        if dep[0] == '':
+            dep[0] = '0'
+            d[key] = int(time)
+        else: d[key] = max([int(d[x]) for x in dep]) + int(time) + 3
+    return max(d.values())
+
+print(csv22())
+
